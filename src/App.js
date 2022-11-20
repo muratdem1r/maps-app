@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { Routes, Route } from "react-router-dom";
+
+// Styles
+import "antd/dist/antd.min.css";
+import "./assets/styles/App.css";
+
+// Pages
+import MapPage from "./pages/Map";
+import Profile from "./pages/Profile";
+import NotFound from "./pages/NotFound";
+
+// Components
+import ProtectedRoute from "./components/Route/ProtectedRoute";
+import Login from "./pages/Login";
+
+import stayLoggedin from "./helpers/stayLoggedin";
 
 function App() {
+  const dispatch = useDispatch();
+
+  // Stay logged in
+  useEffect(() => {
+    stayLoggedin(dispatch);
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="login" element={<Login />} />
+
+      <Route path="/" element={<ProtectedRoute />}>
+        <Route index element={<MapPage />} />
+        <Route path="profile" element={<Profile />} />
+      </Route>
+
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 

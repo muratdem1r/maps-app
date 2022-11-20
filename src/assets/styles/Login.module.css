@@ -1,0 +1,9 @@
+.login{
+    max-width: 80vw;
+    margin: 1rem auto;
+}
+.login form{
+    max-width: 450px;
+    margin-inline:auto;
+    margin-top: 40vh;
+}

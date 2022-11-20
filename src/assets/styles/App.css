@@ -1,0 +1,13 @@
+.ant-layout-content{
+background-color: white;
+}
+.ant-menu{
+    justify-content: end;
+}
+.site-layout-content{
+    margin-inline:2rem;
+    min-height: 100vh;
+}
+.ant-spin-dot-item {
+    background-color: white;
+}
