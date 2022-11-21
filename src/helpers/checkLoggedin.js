@@ -1,6 +1,6 @@
 function checkLoggedin() {
-  const token = localStorage.getItem("token");
-  if (token) return true;
+  const user = localStorage.getItem("user");
+  if (user) return true;
 
   return false;
 }

@@ -13,7 +13,7 @@ function Profile() {
 
   return (
     <div>
-      <Title style={{ marginTop: "2rem" }}>Welcome, {user?.sub}</Title>
+      <Title style={{ marginTop: "2rem" }}>Welcome, {user}</Title>
       <Divider />
       <FeaturesTable />
     </div>

@@ -1,4 +1,4 @@
-import api from "../services/api";
+import { apiLogin } from "store/services/fakeApi";
 import {
   LOGIN_START,
   LOGIN_SUCCESS,
@@ -7,25 +7,21 @@ import {
   SET_USER,
 } from "../types/userTypes";
 
-import jwt_decode from "jwt-decode";
-
 export const login = (inputs) => (dispatch) => {
   dispatch({ type: LOGIN_START });
 
-  api
-    .post("login", inputs)
+  apiLogin(inputs.username, inputs.password)
     .then((response) => {
-      // axios returns JWT token
-      const token = response.data.split(" ")[1];
+      if (response.data) {
+        // save token to localStorage
+        localStorage.setItem("user", response.data.username);
 
-      // save token to localStorage
-      localStorage.setItem("token", token);
-
-      // decode JWT token
-      const user = jwt_decode(token);
-
-      // save user
-      dispatch({ type: LOGIN_SUCCESS, payload: user });
+        // save user
+        dispatch({ type: LOGIN_SUCCESS, payload: response.data.username });
+      } else {
+        //save error
+        dispatch({ type: LOGIN_ERROR, payload: response.error });
+      }
     })
     .catch((error) => {
       // save error

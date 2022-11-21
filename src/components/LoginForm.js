@@ -31,6 +31,7 @@ function LoginForm() {
   return (
     <Form
       name="login"
+      layout="vertical"
       initialValues={{
         remember: true,
       }}
@@ -38,23 +39,24 @@ function LoginForm() {
       onFinishFailed={onFinishFailed}
     >
       <Form.Item
-        name="email"
+        name="username"
         rules={[
           {
             required: true,
-            message: "Please input your email!",
+            message: "Please input your username!",
           },
         ]}
       >
         <Input
           style={{ padding: "0.8rem" }}
           prefix={<UserOutlined className="site-form-item-icon" />}
-          placeholder="Email"
+          placeholder="Username"
         />
       </Form.Item>
 
       <Form.Item
         name="password"
+        label="Passwords must be bigger than 3 characters."
         rules={[
           {
             required: true,

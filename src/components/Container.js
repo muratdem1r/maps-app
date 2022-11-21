@@ -14,7 +14,7 @@ function Container() {
   const location = useLocation();
 
   const logoutHandler = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("user");
     dispatch(logout());
   };
 

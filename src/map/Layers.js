@@ -2,9 +2,9 @@
 import TileLayer from "ol/layer/Tile";
 import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
-import BingMaps from "ol/source/BingMaps";
 import XYZ from "ol/source/XYZ";
 import { mapLayerList } from "constants/mapLayerList";
+
 // Map Layer
 export const rasterLayer = () => {
   const layers = mapLayerList.map((layer) => {
