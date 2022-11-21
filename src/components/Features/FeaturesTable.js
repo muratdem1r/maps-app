@@ -68,6 +68,9 @@ function FeaturesTable() {
       columns={columns}
       dataSource={tableData}
       pagination={false}
+      scroll={{
+        x: 400,
+      }}
     />
   );
 }
