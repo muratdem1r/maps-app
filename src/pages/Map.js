@@ -14,7 +14,7 @@ import {
 
 // Components
 import MapWrapper from "components/MapWrapper";
-import { layers } from "constants/layers";
+import { mapLayerList } from "constants/mapLayerList";
 import { icons } from "constants/icons";
 
 function Map() {
@@ -58,7 +58,7 @@ function Map() {
               defaultValue={layer}
               style={{ width: 200 }}
               onChange={selectLayerHandler}
-              options={layers}
+              options={mapLayerList}
             />
           </Space>
         </Col>

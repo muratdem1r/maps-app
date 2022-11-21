@@ -40,6 +40,7 @@ function MapWrapper() {
       layers: [...rasterLayers, vectorLayer],
       view: new View({
         projection: "EPSG:3857",
+        // Turkey location
         center: [3996201.257074305, 4566415.098549256],
         zoom: 4,
       }),
@@ -70,7 +71,7 @@ function MapWrapper() {
 
     // set only selected layer visible
     for (let i = 0; i < rasterLayers.length; i++) {
-      layerName = rasterLayers[i].values_.source.imagerySet_;
+      layerName = rasterLayers[i].values_.value;
       mapLayer = map?.values_.layergroup.values_.layers.array_[i];
       if (layerName === layer) {
         rasterLayers[i].setVisible(true);

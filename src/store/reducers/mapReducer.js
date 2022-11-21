@@ -3,7 +3,7 @@ const initialState = {
   tableData: [],
   marker: "location.png",
   markerColor: "#FA5252",
-  layer: "RoadOnDemand",
+  layer: "googleMap",
 };
 
 export const mapReducer = (state = initialState, action) => {

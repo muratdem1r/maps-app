@@ -3,30 +3,21 @@ import TileLayer from "ol/layer/Tile";
 import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
 import BingMaps from "ol/source/BingMaps";
-
+import XYZ from "ol/source/XYZ";
+import { mapLayerList } from "constants/mapLayerList";
 // Map Layer
 export const rasterLayer = () => {
-  const styles = [
-    "RoadOnDemand",
-    "Aerial",
-    "AerialWithLabelsOnDemand",
-    "CanvasDark",
-  ];
-
-  const layers = [];
-
-  for (let i = 0; i < styles.length; i++) {
-    layers.push(
-      new TileLayer({
-        visible: false,
-        preload: Infinity,
-        source: new BingMaps({
-          key: process.env.REACT_APP_GOOGLE_KEY,
-          imagerySet: styles[i],
-        }),
-      })
-    );
-  }
+  const layers = mapLayerList.map((layer) => {
+    return new TileLayer({
+      visible: false,
+      preload: Infinity,
+      value: layer.value,
+      source: new XYZ({
+        url: layer.url,
+        cacheSize: 99999999999,
+      }),
+    });
+  });
   return layers;
 };
 
