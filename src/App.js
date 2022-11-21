@@ -4,18 +4,18 @@ import { Routes, Route } from "react-router-dom";
 
 // Styles
 import "antd/dist/antd.min.css";
-import "./assets/styles/App.css";
+import "assets/styles/App.css";
 
 // Pages
-import MapPage from "./pages/Map";
-import Profile from "./pages/Profile";
-import NotFound from "./pages/NotFound";
+import MapPage from "pages/Map";
+import Profile from "pages/Profile";
+import NotFound from "pages/NotFound";
 
 // Components
-import ProtectedRoute from "./components/Route/ProtectedRoute";
-import Login from "./pages/Login";
+import ProtectedRoute from "components/Route/ProtectedRoute";
+import Login from "pages/Login";
 
-import stayLoggedin from "./helpers/stayLoggedin";
+import stayLoggedin from "helpers/stayLoggedin";
 
 function App() {
   const dispatch = useDispatch();

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Space, Table, Button } from "antd";
 
 // Actions
-import { deleteFeature } from "../../store/actions";
+import { deleteFeature } from "store/actions";
 
 function FeaturesTable() {
   const dispatch = useDispatch();

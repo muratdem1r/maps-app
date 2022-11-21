@@ -1,10 +1,10 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 
-import checkLoggedin from "../../helpers/checkLoggedin";
+import checkLoggedin from "helpers/checkLoggedin";
 
 // Components
-import Container from "../Container";
+import Container from "components/Container";
 
 function ProtectedRoute() {
   if (checkLoggedin()) {

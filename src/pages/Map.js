@@ -10,12 +10,12 @@ import {
   changeMarker,
   changeLayer,
   changeMarkerColor,
-} from "../store/actions/mapActions";
+} from "store/actions/mapActions";
 
 // Components
-import MapWrapper from "../components/MapWrapper";
-import { layers } from "../constants/layers";
-import { icons } from "../constants/icons";
+import MapWrapper from "components/MapWrapper";
+import { layers } from "constants/layers";
+import { icons } from "constants/icons";
 
 function Map() {
   const dispatch = useDispatch();

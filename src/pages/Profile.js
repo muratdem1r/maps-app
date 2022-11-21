@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Divider, Typography } from "antd";
 
 // Components
-import FeaturesTable from "../components/Features/FeaturesTable";
+import FeaturesTable from "components/Features/FeaturesTable";
 
 const { Title } = Typography;
 

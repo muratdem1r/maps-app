@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 // Styles
-import styles from "../assets/styles/Map.module.css";
+import styles from "assets/styles/Map.module.css";
 
 // OpenLayer
 import Map from "ol/Map";
@@ -11,13 +11,13 @@ import { unByKey } from "ol/Observable";
 import VectorSource from "ol/source/Vector";
 
 // Layers
-import { rasterLayer, vectorLayer } from "../map/Layers";
+import { rasterLayer, vectorLayer } from "map/Layers";
 
 // Handlers
-import { singleClickHandler } from "../map/Handlers";
+import { singleClickHandler } from "map/Handlers";
 
 // Actions
-import { addFeature } from "../store/actions/mapActions";
+import { addFeature } from "store/actions/mapActions";
 
 function MapWrapper() {
   const dispatch = useDispatch();

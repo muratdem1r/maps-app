@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { Layout, Menu } from "antd";
 
 // Actions
-import { logout } from "../store/actions/userActions";
+import { logout } from "store/actions/userActions";
 
 const { Header, Content, Footer } = Layout;
 

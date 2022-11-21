@@ -6,7 +6,7 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input, Alert, Spin } from "antd";
 
 // Actions
-import { login } from "../store/actions";
+import { login } from "store/actions";
 
 function LoginForm() {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import jwt_decode from "jwt-decode";
 
 // Actions
-import { setUser } from "../store/actions";
+import { setUser } from "store/actions";
 
 function stayLoggedin(dispatch) {
   const token = localStorage.getItem("token");
